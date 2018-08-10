@@ -1,0 +1,65 @@
+  // first step is to that user puts the points,
+    // this is fucking simple, just check the onClick
+    // method attached to the initial chart and add
+    // points correspondingly, simultaneously store those values immidiately
+    // const dataPoints = Utils.createDataPoints();
+    // this is inputted by the user, all i need is the number
+    const centroidAmount: number = 3;
+    // this number is set as so:
+    clusterMaker.k(centroidAmount);
+    // this is where the animation stems from, i need to
+    // progressively run more and more iterations, and i
+    // ought to do this by constantly setting the data as
+    // the current points so that i continually call the
+    // function like below but with the progressively
+    // altering values used.
+    clusterMaker.iterations(100);
+    // and the dataPoints spoken of prior:
+    clusterMaker.data(dataPoints);
+    const clusters: any = clusterMaker.clusters();
+    // otherwise all of this happens afterwards in the same way.
+    const centroidLocations: any = clusters.map((cluster: any) => {
+      return {
+        x: cluster.centroid[0],
+        y: cluster.centroid[1]
+      };
+    });
+    const dataPointsPerCluster: number[][] = [];
+    for (let i = 0; i < centroidAmount; i++) {
+      const clusterDataPoints: number[] = clusters[i].points.map(
+        (dataPoint: number[]) => {
+          return {
+            x: dataPoint[0],
+            y: dataPoint[1]
+          };
+        }
+      );
+      dataPointsPerCluster.push(clusterDataPoints);
+    }
+    this.state = {
+      centroidLocations,
+      dataPointsPerCluster
+    };
+
+
+
+      // public createChart() {
+  //   const colors: string[] = ['blue', 'green', 'orange', 'purple'];
+  //   const len: number = this.state.dataPointsPerCluster.length;
+  //   const centroidPoints: JSX.Element = (
+  //     <Scatter
+  //       key={len + 1}
+  //       name="K-Means"
+  //       data={this.state.centroidLocations}
+  //       fill="red"
+  //     />
+  //   );
+  //   let chartData: JSX.Element[] = [centroidPoints];
+  //   const dataPoints: JSX.Element[] = this.state.dataPointsPerCluster.map(
+  //     (cluster: number[][], i: number) => {
+  //       return <Scatter key={i} data={cluster} fill={colors[i]} />;
+  //     }
+  //   );
+  //   chartData = chartData.concat(dataPoints)
+  //   return chartData;
+  // }

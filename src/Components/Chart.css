@@ -1,0 +1,18 @@
+#root > div > svg > g:nth-child(5) > g > g svg {
+  outline: 2rem solid red;
+}
+
+#root > div > svg > g {
+  outline: #e8eaed;
+  /* border: 1px solid yellow; */
+  outline-style: dotted;
+
+}
+
+#root > div > svg > g:nth-child(5),
+#root > div > svg > g:nth-child(1),
+#root > div > svg > g:nth-child(2),
+#root > div > svg > g:nth-child(3),
+#root > div > svg > g:nth-child(4) {
+  outline: white;
+}

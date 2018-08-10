@@ -4,3 +4,19 @@
   left: 0;
   margin: 2rem;
 }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid black;
+  margin-bottom: 3rem;
+}
+
+.header-text {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: rgb(14, 14, 117);
+  border: 2px solid grey;
+  border-radius: 1rem;
+  padding: 0.5rem;
+}

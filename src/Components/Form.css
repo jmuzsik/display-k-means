@@ -1,0 +1,31 @@
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.form label, .form button {
+  margin: 1rem;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form label input {
+  border-radius: .2rem;
+}
+
+.form button {
+  width: 4rem;
+  height: 2rem;
+  font-size: 1rem;
+}
+
+.form button:hover {
+  background-color: whitesmoke;
+}
