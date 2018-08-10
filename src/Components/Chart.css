@@ -16,3 +16,7 @@
 #root > div > svg > g:nth-child(4) {
   outline: white;
 }
+
+.recharts-wrapper {
+  margin: auto;
+}
