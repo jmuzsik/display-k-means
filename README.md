@@ -1,4 +1,4 @@
-# Visualisation of K-Means with Emojis
+# Visualisation of K-Means clustering
 
 ## Simple Typescript react app using recharts to display the algorithm
 
