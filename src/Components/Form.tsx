@@ -57,7 +57,7 @@ export default class Form extends React.PureComponent<
    * @method
    */
   public componentDidUpdate() {
-    if (this.props.numberOfPoints > 9 && this.state.kValue > 0) {
+    if (this.state.kValue > 0) {
       this.setState({ disabled: false });
     }
   }
@@ -75,17 +75,17 @@ export default class Form extends React.PureComponent<
   public render() {
     return (
       <form className="form" onSubmit={this.handleSubmit}>
-        <label>
-          Centroids:
+        <p>Centroids</p>
+        <div className="inner">
           <input
             type="number"
             value={this.state.kValue}
             onChange={this.handleChange}
           />
-        </label>
-        <button disabled={this.state.disabled} type="submit" value="Submit">
-          Run
-        </button>
+          <button disabled={this.state.disabled} type="submit" value="Submit">
+            Run
+          </button>
+        </div>
       </form>
     );
   }

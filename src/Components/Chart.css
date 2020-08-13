@@ -1,5 +1,10 @@
-#root > div > svg > g:nth-child(5) > g > g svg {
-  outline: 2rem solid red;
+.recharts-layer.recharts-scatter-symbol {
+  height: 20px;
+  width: 20px;
+}
+.recharts-layer.recharts-scatter {
+  height: 20px;
+  width: 20px; 
 }
 
 #root > div > svg > g {

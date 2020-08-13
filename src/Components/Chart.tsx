@@ -4,20 +4,6 @@ import * as React from 'react';
 import './Chart.css';
 
 import {
-  happy,
-  ill,
-  kiss,
-  nerd,
-  ninja,
-  smart,
-  smiling,
-  surprised,
-  suspicious,
-  tongueOut,
-  wink
-} from '../emojis';
-
-import {
   CartesianGrid,
   Scatter,
   ScatterChart,
@@ -166,7 +152,7 @@ export default class Chart extends React.Component<
         key={Math.random()}
         onClick={this.checkPoint}
         width={1000}
-        height={1000}
+        height={500}
       >
         <CartesianGrid />
         <XAxis domain={[-100, 100]} dataKey={'x'} type="number" />
@@ -188,46 +174,22 @@ export default class Chart extends React.Component<
         <Scatter
           key={Math.random()}
           data={this.state.chartPoints}
-          shape={suspicious}
         />
       );
     }
-    const emojis: JSX.Element[] = [
-      ill,
-      kiss,
-      surprised,
-      ninja,
-      tongueOut,
-      nerd,
-      smart,
-      smiling,
-      suspicious,
-      wink,
-      happy
-    ];
     const centroidPoints: JSX.Element = (
       <Scatter
         key={Math.random()}
         name="K-Means"
         data={this.state.centroidLocations}
-        shape={tongueOut}
       />
     );
     // put centroid points first
     let chartData: JSX.Element[] = [centroidPoints];
     // then rest of points
     const dataPoints: JSX.Element[] = this.state.dataPointsPerCluster.map(
-      (cluster: number[][], i: number) => {
-        if (i > 10) {
-          return (
-            <Scatter
-              key={Math.random()}
-              data={cluster}
-              shape={emojis[i - 10]}
-            />
-          );
-        }
-        return <Scatter key={Math.random()} data={cluster} shape={emojis[i]} />;
+      (cluster: number[][]) => {
+        return <Scatter key={Math.random()} data={cluster} />;
       }
     );
     chartData = chartData.concat(dataPoints);

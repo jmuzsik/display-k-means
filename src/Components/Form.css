@@ -1,31 +1,30 @@
 .form {
+  margin-top: 1rem;
+}
+.form .inner {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 1rem;
 }
-
-.form label, .form button {
+.form p {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 0;
+}
+button {
   margin: 1rem;
 }
 
-.form label {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.form label input {
+input {
   border-radius: .2rem;
 }
 
-.form button {
+ button {
   width: 4rem;
   height: 2rem;
   font-size: 1rem;
 }
 
-.form button:hover {
+button:hover {
   background-color: whitesmoke;
 }

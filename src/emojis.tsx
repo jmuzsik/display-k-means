@@ -9,7 +9,8 @@ export const happy = (
     x="0px"
     y="0px"
     viewBox="0 0 473.931 473.931"
-    xmlSpace="preserve"
+    height="300px"
+    width="300px"
   >
     <circle style={{ fill: '#FFC10E' }} cx="236.966" cy="236.966" r="236.966" />
     <g>
